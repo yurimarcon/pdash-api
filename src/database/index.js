@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-let user = 'betasydle'
-let psw = 'ayllCTxreCYQ3tb1'
-let cluster = 'BetaSydle'
+let user = process.env.USER_DB;
+let psw = process.env.PSW_DB;
+let cluster = process.env.CLUSTER;
 
 mongoose.connect(
-    'mongodb+srv://betasydle:ayllCTxreCYQ3tb1@cluster0.lplyi.mongodb.net/BetaSydle',
+    'mongodb+srv://'+user+':'+psw+'@cluster0.lplyi.mongodb.net/'+cluster,
     { useUnifiedTopology: true },
     { useNewUrlParser: true }
 );
