@@ -14,4 +14,4 @@ require('./controllers/leads')(app);
 require('./controllers/mesa')(app);
 require('./controllers/analytics')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
