@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Mesa = require('../models/mesas');
+const Mesa = require('../../models/Desenvolvimento/mesas');
 
 const router = express.Router();
 

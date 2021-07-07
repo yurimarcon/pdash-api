@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Eventos = require('../models/eventos');
+const Eventos = require('../../models/Marketing/eventos');
 
 const router = express.Router();
 

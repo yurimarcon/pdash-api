@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Leads = require('../models/leads');
+const Leads = require('../../models/Marketing/leads');
 
 const router = express.Router();
 
@@ -49,6 +49,34 @@ router.delete('/', async(req, res)=>{
     }catch(err){
 
         return res.status(400).send({error: 'Falha ao excluir lead'});
+
+    }
+
+});
+
+router.post('/', async(req, res)=>{
+    
+    try{
+        const filter = {_id : req.body._id};
+        const update = { 
+            title       : req.body.title,
+            subtitle    : req.body.subtitle,
+            nome        : req.body.nome,
+            email       : req.body.email,
+            telefone    : req.body.telefone,
+            empresa     : req.body.empresa,
+            fornecedor  : req.body.fornecedor,
+            descricao   : req.body.descricao,
+            class       : req.body.class,
+        };
+        
+        const leads = await Leads.findOneAndUpdate(filter, update);
+        
+        return res.json(leads);
+
+    }catch(err){
+
+        return res.status(400).send({error: 'Falha ao atualizar lead'});
 
     }
 

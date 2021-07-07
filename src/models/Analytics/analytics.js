@@ -1,4 +1,4 @@
-const mongoose = require('../database');
+const mongoose = require('../../database');
 
 const AnalyticsSchema = new mongoose.Schema({
     title:{

@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Analytics = require('../models/analytics');
+const Analytics = require('../../models/Analytics/analytics');
 
 const router = express.Router();
 
