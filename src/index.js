@@ -8,10 +8,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./controllers/CRM/empresas')(app);
-require('./controllers/Marketing/eventos')(app);
-require('./controllers/Marketing/leads')(app);
-require('./controllers/Desenvolvimento/mesa')(app);
-require('./controllers/Analytics/analytics')(app);
+require('./controllers')(app);
 
 app.listen(process.env.PORT || 3000);
